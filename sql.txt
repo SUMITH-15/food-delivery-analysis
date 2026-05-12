@@ -1,0 +1,26 @@
+-- Average Delivery Time
+SELECT AVG(time_taken_min) AS avg_time
+FROM food_delivery;
+
+-- Delivery Time by City
+SELECT city, AVG(time_taken_min) AS avg_time
+FROM food_delivery
+GROUP BY city
+ORDER BY avg_time;
+
+-- Delivery Time by Traffic
+SELECT road_traffic_density, AVG(time_taken_min) AS avg_time
+FROM food_delivery
+GROUP BY road_traffic_density
+ORDER BY avg_time;
+
+-- Delivery Time by Vehicle
+SELECT type_of_vehicle, AVG(time_taken_min) AS avg_time
+FROM food_delivery
+GROUP BY type_of_vehicle;
+
+-- Orders Count by City
+SELECT city, COUNT(*) AS total_orders
+FROM food_delivery
+GROUP BY city
+ORDER BY total_orders DESC;
